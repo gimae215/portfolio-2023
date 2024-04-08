@@ -1,0 +1,494 @@
+footer {
+    width: 100%;
+    position: relative;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
+    .family-site {
+        width: 100%;
+        height: 100px;
+        background-color: #f7f7f7;
+
+        >ul {
+            width: 70%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+
+            >li {
+                flex: 1;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                >img {
+                    width: 100%;
+                    height: 70%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+    .sitemap {
+        width: 100%;
+        background-color: #333;
+        transition: 0.5s;
+
+        p {
+            width: 70%;
+            height: 50px;
+            margin: 0 auto;
+
+            >a {
+                font-size: 16px;
+                line-height: 50px;
+                color: #f7f7f7;
+    
+                &::after {
+                    display: inline-block;
+                    content: '∨';
+                    font-size: 14px;
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        .sitemap-gnb {
+            height: 0px;
+            width: 100%;
+            display: flex;
+            padding: 0 15%;
+            gap: 30px;
+            overflow: hidden;
+            justify-content: center;
+            text-align: center;
+
+            >li {
+                >a {
+                    display: block;
+                    font-size: 20px;
+                    color: #f7f7f7;
+                    margin-bottom: 20px;
+                }
+
+                > .sitemap-sub {
+                    >li {
+                        >a {
+                            display: block;
+                            font-size: 16px;
+                            color: #999;
+                            margin-bottom: 10px;
+
+                            &.subPage {
+                                color: $mainColor;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.active {
+            padding: 0 0 50px;
+            p {
+                margin-bottom: 30px;
+
+                >a {
+                    &::after {
+                        content: '∧';
+                    }
+                }
+
+                &::after {
+                    display: block;
+                    content: '';
+                    width: 100%;
+                    height: 0.5px;
+                    background-color: #ddd;
+                    opacity: .2;
+                }
+            }
+
+            .sitemap-gnb {
+                height: auto;
+            }
+        }
+    }
+    .footer-content {
+        width: 100%;
+        background-color: #f7f7f7;
+        padding: 40px 15%;
+        position: relative;
+
+        .visitjeju-number {
+            >p {
+                font-size: 34px;
+                margin-bottom: 40px;
+                color: #444;
+
+                &:first-of-type {
+                    font-size: 22px;
+                    font-weight: normal;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        .footer-list {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+
+            >li {
+                >a {
+                    font-size: 14px;
+                    color: #888;
+
+                    &.bold {
+                        color: #222;
+                    }
+                }
+            }
+        }
+
+        .footer-txt {
+            margin-bottom: 30px;
+            >li {
+                margin-bottom: 10px;
+                font-size: 14px;
+                color: #888;
+
+                >ul {
+                    display: flex;
+                    gap: 20px;
+                }
+            }
+        }
+
+        .copyright {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .certification {
+            position: absolute;
+            top: 20px;
+            right: 15%;
+            display: flex;
+            right: 15%;
+            width: 400px;
+            gap: 20px;
+
+            >li {
+                flex: 1.5;
+                &:first-of-type {
+                    flex: 1;
+                }
+                >img {
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    #mini-top-btn {
+        display: none;
+        position: absolute;
+        top: 230px;
+        right: 5%;
+        z-index: 2;
+        width: 80px;
+        height: 80px;
+        background-color: #333;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+
+        >a {
+            color: #fff;
+
+            &::before {
+                display: block;
+                content: '∧';
+                text-align: center;
+                font-size: 12px;
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+    footer {
+        .family-site {
+            >ul {
+                width: 90%;
+            }
+        }
+        .sitemap {
+            p {
+                width: 90%;
+                height: 40px;
+    
+                >a {
+                    line-height: 40px;
+                }
+            }
+    
+        }
+        .footer-content {
+            padding: 40px 5%;
+
+            .visitjeju-number {
+                >p {
+                    font-size: 30px;
+                    margin-bottom: 25px;
+
+                    &:first-of-type {
+                        font-size: 18px;
+                    }
+                }
+            }
+    
+            .footer-list {
+                gap: 10px;
+                margin-bottom: 15px;
+            }
+    
+            .footer-txt {
+                margin-bottom: 20px;
+                >li {
+                    >ul {
+                        gap: 10px;
+                    }
+                }
+            }
+    
+            .certification {
+                right: 5%;
+                width: 300px;
+            }
+        }
+
+        #mini-top-btn {
+            display: flex;
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    footer {
+        .family-site {
+            height: 50px;
+            >ul {
+                width: 100%;
+
+                >li {
+                    >img {
+                        height: 100%;
+                    }
+                }
+            }
+        }
+        .sitemap {
+            p {
+                width: 90%;
+                height: 30px;
+    
+                >a {
+                    line-height: 30px;
+                    font-size: 13px;
+                }
+            }
+
+            .sitemap-gnb {
+                padding: 0 5%;
+                >li {
+                    >a {
+                        font-size: 18px;
+                    }
+    
+                    > .sitemap-sub {
+                        >li {
+                            >a {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.active {
+                padding: 0 0 30px;
+            }
+    
+        }
+        .footer-content {
+            padding: 30px 5%;
+
+            .visitjeju-number {
+                >p {
+                    font-size: 26px;
+                    margin-bottom: 18px;
+
+                    &:first-of-type {
+                        font-size: 20px;
+                    }
+                }
+            }
+    
+            .footer-list {
+                gap: 10px;
+                margin-bottom: 15px;
+
+                >li {
+                    >a {
+                        font-size: 13px;
+                    }
+                }
+            }
+    
+            .footer-txt {
+                margin-bottom: 20px;
+                >li {
+                    font-size: 13px;
+                }
+            }
+
+            .copyright {
+                font-size: 12px;
+            }
+    
+            .certification {
+                width: 200px;
+            }
+        }
+
+        #mini-top-btn {
+            top: auto;
+            bottom: 20px;
+            width: 60px;
+            height: 60px;
+
+            >a {
+                font-size: 14px;
+
+                &::before {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile) {
+    footer {
+        .family-site {
+            height: 40px;
+        }
+        .sitemap {
+            p {
+                >a {
+                    font-size: 12px;
+                }
+            }
+
+            .sitemap-gnb {
+                padding: 0 5%;
+                gap: 5px;
+                justify-content: start;
+                text-align: left;
+                >li {
+                    >a {
+                        padding: 0;
+                        margin-bottom: 10px;
+                        font-size: 12px;
+                    }
+    
+                    > .sitemap-sub {
+                        >li {
+                            font-size: 10px;
+                            >a {
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.active {
+                padding: 0 0 30px;
+            }
+    
+        }
+        .footer-content {
+            padding: 20px 5%;
+
+            .visitjeju-number {
+                >p {
+                    font-size: 16px;
+                    margin-bottom: 15px;
+
+                    &:first-of-type {
+                        font-size: 14px;
+                    }
+                }
+            }
+    
+            .footer-list {
+                gap: 5px;
+                margin-bottom: 15px;
+                flex-wrap: wrap;
+
+                >li {
+                    >a {
+                        font-size: 10px;
+                    }
+                }
+            }
+    
+            .footer-txt {
+                margin-bottom: 15px;
+                >li {
+                    font-size: 10px;
+                    margin-bottom: 5px;
+
+                    >ul {
+                        flex-wrap: wrap;
+                        gap: 5px;
+                    }
+                }
+            }
+
+            .copyright {
+                font-size: 10px;
+            }
+    
+            .certification {
+                width: 150px;
+                gap: 10px;
+            }
+        }
+
+        #mini-top-btn {
+            overflow: visible;
+            top: -60px;
+            bottom: auto;
+            width: 40px;
+            height: 40px;
+            background-color: $mainColor;
+
+            >a {
+                font-size: 10px;
+
+                &::before {
+                    font-size: 8px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
